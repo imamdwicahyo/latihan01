@@ -15,6 +15,7 @@
       <tr>
         <td>name</td>
         <td>email</td>
+        <td>action</td>
       </tr>
     </thead>
     <tbody>
@@ -22,6 +23,7 @@
         <tr>
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
+            <td><a href="{{ route('user-delete', [$user->id]) }}"><button>Delete</button></a></td>
         </tr>
       @endforeach
     </tbody>

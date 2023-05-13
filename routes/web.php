@@ -21,5 +21,6 @@ Route::get('/', function () {
 Route::get('/admin/users', [AdminController::class, 'index'])->name('users');
 Route::get('/admin/users/create', [AdminController::class, 'create'])->name('users-create');
 Route::post('/admin/users/create', [AdminController::class, 'store'])->name('users-store');
-Route::get('/admin/users/edit', [AdminController::class, 'update']);
-Route::delete('/admin/users/delete', [AdminController::class, 'delete']);
+Route::get('/admin/users/edit/{user_id}', [AdminController::class, 'edit'])->name('user-edit');
+Route::post('/admin/users/edit', [AdminController::class, 'update'])->name('users-update');
+Route::get('/admin/users/delete/{user_id}', [AdminController::class, 'delete'])->name('user-delete');
